@@ -1,0 +1,9 @@
+#!/bin/sh
+
+COMMIT_MESSAGE="$(cat $1)";
+REGEXP_PATTERN="^(feat|fix|docs|style|refactor|test|chore)(\(.*\)){0,1}: .+$";
+
+if [[ ! "$COMMIT_MESSAGE" =~ $REGEXP_PATTERN ]]; then
+	echo "Your message commit does not respect the following pattern : $REGEXP_PATTERN";
+	exit 1;
+fi
