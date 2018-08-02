@@ -15,7 +15,6 @@ import java.util.Collections;
 import java.util.stream.Stream;
 
 @SpringBootApplication
-//@EnableOAuth2Sso
 @AllArgsConstructor
 public class SaturdayApplication {
 
@@ -26,7 +25,7 @@ public class SaturdayApplication {
     }
 
     @Bean
-    public CommandLineRunner commandLineRunner(ApplicationContext ctx){
+    public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
             Stream.of("Denver JUG", "Utah JUG", "Seattle JUG",
                     "Richmond JUG").forEach(name ->
@@ -44,4 +43,6 @@ public class SaturdayApplication {
             repository.findAll().forEach(System.out::println);
         };
     }
+
+
 }
